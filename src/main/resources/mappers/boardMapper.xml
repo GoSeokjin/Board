@@ -22,11 +22,15 @@
 	
 	<select id="boardList" resultType="BoardVO">
 		<![CDATA[
-		  select * from tbl_board where bno > 0 order by bno desc , regdate desc
+		  select * from tbl_board where bno > 0 order by bno desc , regdate desc limit #{pageStart} , #{perPageNum}
 		]]>
 	</select>
 
-
+	<select id="boardCriteria" resultType="BoardVO">
+		<![CDATA[
+		  select * from tbl_board where bno > 0 order by bno desc , regdate desc limit #{pageStart} , #{perPageNum}
+		]]>
+	</select>
 
 
 

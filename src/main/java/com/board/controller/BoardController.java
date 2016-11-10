@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.board.service.BoardServiceImpl;
 import com.board.vo.BoardVO;
+import com.board.vo.Criteria;
 
 @Controller
 @RequestMapping("/board/*")
@@ -25,10 +26,10 @@ public class BoardController {
 	
 	//메인화면 ( 리스트 페이지 )
 	@RequestMapping(value= "/boardMain" , method=RequestMethod.GET)
-	public String boardMain(Model model)throws Exception{
+	public String boardMain(Criteria cri , Model model)throws Exception{
 		logger.info("Main 호출 ");
-		logger.info(service.boardList().toString());
-		model.addAttribute("list", service.boardList());
+		logger.info("Criteria");
+		model.addAttribute("list" , service.boardCriteria(cri));
 		return "boardMain";
 	}
 	
@@ -66,6 +67,13 @@ public class BoardController {
 		service.boardDelete(bno);
 		return "redirect:/board/boardMain";
 	}
+	
+	@RequestMapping(value= "/boardCriteria" , method = RequestMethod.GET)
+	public void boardDelete(Criteria cri , Model model)throws Exception{
+		logger.info("Criteria");
+		model.addAttribute("list" , service.boardCriteria(cri));
+	}
+	
 	
 	
 }
