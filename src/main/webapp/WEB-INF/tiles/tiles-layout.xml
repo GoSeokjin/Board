@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+<!-- default : 템플릿에 설정된 페이지의 구성 요소에 대한 실제 파일을 지정합니다. -->
+<definition name="mainLayout" template="/WEB-INF/views/page/mainPage.jsp">
+	<put-attribute name="header" value="/WEB-INF/views/page/headerPage.jsp" />
+	<put-attribute name="body" value="/WEB-INF/views/page/bodyPage.jsp" />
+</definition>
+
+<definition name="boardMain" template="/WEB-INF/views/board/boardMainPage.jsp">
+	<put-attribute name="header" value="/WEB-INF/views/page/headerPage.jsp" />
+	<put-attribute name="boardMenu" value="/WEB-INF/views/board/boardMenuPage.jsp" />
+	<put-attribute name="boardBody" value="/WEB-INF/views/board/boardBodyPage.jsp" />
+</definition>
+
+<!-- board writer -->
+<definition name="boardWriter" extends="boardMain"> 
+<put-attribute name="boardBody" value="/WEB-INF/views/board/boardWriterPage.jsp" /> 
+</definition> 
+
+</tiles-definitions>
