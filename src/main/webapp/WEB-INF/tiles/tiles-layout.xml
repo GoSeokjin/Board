@@ -21,4 +21,9 @@
 <put-attribute name="boardBody" value="/WEB-INF/views/board/boardWriterPage.jsp" /> 
 </definition> 
 
+<!-- board Update -->
+<definition name="boardUpdate" extends="boardMain"> 
+<put-attribute name="boardBody" value="/WEB-INF/views/board/boardUpdatePage.jsp" /> 
+</definition> 
+
 </tiles-definitions>
