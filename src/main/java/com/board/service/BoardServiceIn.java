@@ -13,3 +13,4 @@ public interface BoardServiceIn {
 	public List<BoardVO> boardList()throws Exception;
 	public List<BoardVO> boardCriteria(Criteria cri)throws Exception;
 }
+

@@ -68,6 +68,11 @@ public class BoardController {
 		return "redirect:/board/boardMain";
 	}
 	
+	@RequestMapping(value= "/boardNotice", method = RequestMethod.GET)
+	public String boardNotice()throws Exception {
+		return "boardNotice";
+	}
+	
 	@RequestMapping(value= "/boardCriteria" , method = RequestMethod.GET)
 	public void boardDelete(Criteria cri , Model model)throws Exception{
 		logger.info("Criteria");

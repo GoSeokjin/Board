@@ -21,9 +21,19 @@
 <put-attribute name="boardBody" value="/WEB-INF/views/board/boardWriterPage.jsp" /> 
 </definition> 
 
+<!-- board Notice -->
+<definition name="boardNotice" extends="boardMain"> 
+<put-attribute name="boardBody" value="/WEB-INF/views/board/boardNotice.jsp" /> 
+</definition> 
+
 <!-- board Update -->
 <definition name="boardUpdate" extends="boardMain"> 
 <put-attribute name="boardBody" value="/WEB-INF/views/board/boardUpdatePage.jsp" /> 
+</definition> 
+
+<!-- board Update -->
+<definition name="noticeInsertForm" extends="boardMain"> 
+<put-attribute name="boardBody" value="/WEB-INF/views/notice/noticeWriterPage.jsp" /> 
 </definition> 
 
 </tiles-definitions>
