@@ -5,7 +5,7 @@
 <mapper namespace="com.project.mapper.boardMapper">
 	
 	<insert id="boardWriter">
-		insert into tbl_board(title,content,writer) values(#{title},#{content},#{writer})
+		insert into tbl_board(btitle,bcontent,bwriter) values(#{btitle},#{bcontent},#{bwriter})
 	</insert>
 	
 	<select id="boardRead" resultType="BoardVO">
@@ -13,7 +13,7 @@
 	</select>
 	
 	<update id="boardUpdate">
-		update tbl_board set title=#{title} , content = #{content} where bno = #{bno}
+		update tbl_board set btitle=#{btitle} , bcontent = #{bcontent} where bno = #{bno}
 	</update>
 	
 	<delete id="boardDelete">
@@ -22,13 +22,13 @@
 	
 	<select id="boardList" resultType="BoardVO">
 		<![CDATA[
-		  select * from tbl_board where bno > 0 order by bno desc , regdate desc limit #{pageStart} , #{perPageNum}
+		  select * from tbl_board where bno > 0 order by bno desc , bregdate desc limit #{pageStart} , #{perPageNum}
 		]]>
 	</select>
 
 	<select id="boardCriteria" resultType="BoardVO">
 		<![CDATA[
-		  select * from tbl_board where bno > 0 order by bno desc , regdate desc limit #{pageStart} , #{perPageNum}
+		  select * from tbl_board where bno > 0 order by bno desc , bregdate desc limit #{pageStart} , #{perPageNum}
 		]]>
 	</select>
 

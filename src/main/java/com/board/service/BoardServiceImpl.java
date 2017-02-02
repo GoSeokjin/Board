@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 
 import com.board.dao.BoardDaoImpl;
 import com.board.vo.BoardVO;
-import com.board.vo.Criteria;
 
-//서비스임을 명시
+
+//�꽌鍮꾩뒪�엫�쓣 紐낆떆
 @Service
 public class BoardServiceImpl implements BoardServiceIn {
 
-	//DAO주입
+	//DAO二쇱엯
 	@Inject
 	private BoardDaoImpl dao;
 	
@@ -41,11 +41,6 @@ public class BoardServiceImpl implements BoardServiceIn {
 	@Override
 	public List<BoardVO> boardList() throws Exception {
 		return dao.boardList();
-	}
-
-	@Override
-	public List<BoardVO> boardCriteria(Criteria cri) throws Exception {
-		return dao.boardCriteria(cri);
 	}
 
 }

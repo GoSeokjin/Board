@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.board.service.BoardServiceImpl;
 import com.board.vo.BoardVO;
-import com.board.vo.Criteria;
 
 @Controller
 @RequestMapping("/board/*")
@@ -24,19 +23,18 @@ public class BoardController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
-	//메인화면 ( 리스트 페이지 )
+	//硫붿씤�솕硫� ( 由ъ뒪�듃 �럹�씠吏� )
 	@RequestMapping(value= "/boardMain" , method=RequestMethod.GET)
-	public String boardMain(Criteria cri , Model model)throws Exception{
-		logger.info("Main 호출 ");
-		logger.info("Criteria");
-		model.addAttribute("list" , service.boardCriteria(cri));
+	public String boardMain(Model model)throws Exception{
+	
+		model.addAttribute("list" , service.boardList());
 		return "boardMain";
 	}
 	
-	//글쓰기 페이지
+	//湲��벐湲� �럹�씠吏�
 	@RequestMapping(value = "/boardWriter" , method = RequestMethod.GET)
 	public String boardWriter()throws Exception{
-		logger.info("Writer호출");
+		logger.info("Writer�샇異�");
 		return "boardWriter";
 	}
 	
@@ -49,7 +47,7 @@ public class BoardController {
 	
 	@RequestMapping(value= "/boardUpdate" , method = RequestMethod.GET )
 	public String boardUpdateGet(@RequestParam("bno")int bno , Model model)throws Exception{
-		logger.info("호출된 객체 : " + service.boardRead(bno).toString());
+		logger.info("�샇異쒕맂 媛앹껜 : " + service.boardRead(bno).toString());
 		model.addAttribute("boardVO" , service.boardRead(bno));
 		return "boardUpdate";
 	}
@@ -66,17 +64,6 @@ public class BoardController {
 		logger.info("delete");
 		service.boardDelete(bno);
 		return "redirect:/board/boardMain";
-	}
-	
-	@RequestMapping(value= "/boardNotice", method = RequestMethod.GET)
-	public String boardNotice()throws Exception {
-		return "boardNotice";
-	}
-	
-	@RequestMapping(value= "/boardCriteria" , method = RequestMethod.GET)
-	public void boardDelete(Criteria cri , Model model)throws Exception{
-		logger.info("Criteria");
-		model.addAttribute("list" , service.boardCriteria(cri));
 	}
 	
 	

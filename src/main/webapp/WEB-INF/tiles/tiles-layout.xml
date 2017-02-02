@@ -5,6 +5,10 @@
 <tiles-definitions>
 
 <!-- default : 템플릿에 설정된 페이지의 구성 요소에 대한 실제 파일을 지정합니다. -->
+<definition name="mainLoginLayout" template="/WEB-INF/views/mainLogin/mainLoginPage.jsp">
+</definition>
+
+
 <definition name="mainLayout" template="/WEB-INF/views/page/mainPage.jsp">
 	<put-attribute name="header" value="/WEB-INF/views/page/headerPage.jsp" />
 	<put-attribute name="body" value="/WEB-INF/views/page/bodyPage.jsp" />
@@ -31,9 +35,5 @@
 <put-attribute name="boardBody" value="/WEB-INF/views/board/boardUpdatePage.jsp" /> 
 </definition> 
 
-<!-- board Update -->
-<definition name="noticeInsertForm" extends="boardMain"> 
-<put-attribute name="boardBody" value="/WEB-INF/views/notice/noticeWriterPage.jsp" /> 
-</definition> 
 
 </tiles-definitions>

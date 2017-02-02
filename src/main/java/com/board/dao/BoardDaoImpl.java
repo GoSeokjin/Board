@@ -8,20 +8,20 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.board.vo.BoardVO;
-import com.board.vo.Criteria;
 
-//Dao 임을 명시
+
+//Dao �엫�쓣 紐낆떆
 @Repository
 public class BoardDaoImpl implements BoardDaoIn{
 	
-	//세션 주입
+	//�꽭�뀡 二쇱엯
     @Inject
     private SqlSession session;
     
     //mybatis name 
     private static String namespace = "com.project.mapper.boardMapper";
 	
-    //글입력 
+    //湲��엯�젰 
 	@Override
 	public void boardWriter(BoardVO vo) throws Exception {
 		session.insert(namespace + ".boardWriter" , vo); 
@@ -47,18 +47,7 @@ public class BoardDaoImpl implements BoardDaoIn{
 		return session.selectList(namespace + ".boardList");
 	}
 
-	@Override
-	public List<BoardVO> boardPage(int page) throws Exception {
-		if(page <= 0 ){
-			page = 1;
-		}
-		page = (page -1)*10;
-		return session.selectList(namespace + ".boardList" , page);
-	}
+	
 
-	@Override
-	public List<BoardVO> boardCriteria(Criteria cri) throws Exception {
-		return session.selectList(namespace + ".boardCriteria" , cri);
-	}
 
 }
