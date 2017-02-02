@@ -19,6 +19,11 @@
 	<context:component-scan base-package="com.board.vo" />
 	<context:component-scan base-package="com.main.homeController" />
 	
+	<!-- member -->
+	<context:component-scan base-package="com.member.controller" />
+	<context:component-scan base-package="com.member.dao" />
+	<context:component-scan base-package="com.member.service" />
+	<context:component-scan base-package="com.member.vo" />
 		
 	
 	
