@@ -1,5 +1,7 @@
+<%@page import="com.member.vo.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%MemberVO vo = (MemberVO)session.getAttribute("member"); %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,13 +18,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">냉장고</a>
+          <a class="navbar-brand" href="/board/boardMain"><%=vo.getMname() %>님 환영합니다</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/board/boardMain">게시판</a></li>
             <li><a href="#">마이페이지</a></li>
-            <li><a href="#">로그인</a></li>
+            <li><a href="/member/logoutMember">로그아웃</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">

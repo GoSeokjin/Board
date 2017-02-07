@@ -12,10 +12,10 @@
 <body>
 <div id="fullscreen_bg" class="fullscreen_bg"/>
 <div class="container">
-    <form class="form-signin" action="/user/login" method="post">
+    <form class="form-signin" action="/member/memberLogin" method="post">
         <h1 class="form-signin-heading text-muted">Sign In</h1>
-        <input type="text" class="form-control" name="useremail" placeholder="Email address" required="" autofocus="">
-        <input type="password" class="form-control" name="userpassword" placeholder="Password" required="">
+        <input type="text" class="form-control" name="mid" placeholder="Email address" required="" autofocus="">
+        <input type="password" class="form-control" name="mpassword" placeholder="Password" required="">
         <button class="signInBtn btn-lg btn-success btn-block" type="submit">
             로그인
         </button>
@@ -45,24 +45,24 @@
                 <h4 class="modal-title">회원가입</h4>
             </div>
             <div class="modal-body">
-                <form role="form" class="form-horizontal" action="/user/new" method="post">
+                <form role="form" class="form-horizontal" action="/member/insertMember" method="post">
                     <div class="form-group">
                         <label class="col-lg-2 control-label">Email</label>
                         <div class="col-lg-10">
-                            <input type="text" placeholder="이메일을 입력해주세요" name="user[useremail]" class="form-control">
+                            <input type="text" placeholder="이메일을 입력해주세요" name="mid" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-lg-2 control-label">Password</label>
                         <div class="col-lg-10">
-                            <input type="text" placeholder="비밀번호를 입력해주세요" name="user[userpassword]"
+                            <input type="text" placeholder="비밀번호를 입력해주세요" name="mpassword"
                                    class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-lg-2 control-label">Name</label>
                         <div class="col-lg-10">
-                            <input type="text" placeholder="이름을 입력해주세요" name="user[username]" class="form-control">
+                            <input type="text" placeholder="이름을 입력해주세요" name="mname" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">

@@ -29,15 +29,15 @@ $(document).ready(function(){
                     <h3 style="margin-bottom: 25px; text-align: center;">Update Writer</h3>
         			<div class="form-group">
         				Title
-						<input type="text" class="form-control" id="title" name="title" placeholder="${boardVO.title}" required>
+						<input type="text" class="form-control" id="btitle" name="btitle" placeholder="${boardVO.btitle}" required>
 					</div>
 					<div class="form-group">
 						Writer
-						<input type="text" class="form-control" id="writer" name="writer" value="${boardVO.writer}" disabled>
+						<input type="text" class="form-control" id="bwriter" name="bwriter" value="${boardVO.bwriter}" disabled>
 					</div>
                     <div class="form-group">
                     Content
-                    <textarea class="form-control" type="textarea" id="Content" name ="Content" placeholder="${boardVO.content}" maxlength="140" rows="7"></textarea>
+                    <textarea class="form-control" type="textarea" id="Content" name ="Content" placeholder="${boardVO.bcontent}" maxlength="140" rows="7"></textarea>
                         <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
                     </div>
                     <input type="hidden" name="bno" value="${boardVO.bno}">

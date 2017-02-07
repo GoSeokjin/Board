@@ -10,18 +10,14 @@ import org.springframework.stereotype.Repository;
 import com.board.vo.BoardVO;
 
 
-//Dao �엫�쓣 紐낆떆
 @Repository
 public class BoardDaoImpl implements BoardDaoIn{
 	
-	//�꽭�뀡 二쇱엯
     @Inject
     private SqlSession session;
     
-    //mybatis name 
     private static String namespace = "com.project.mapper.boardMapper";
 	
-    //湲��엯�젰 
 	@Override
 	public void boardWriter(BoardVO vo) throws Exception {
 		session.insert(namespace + ".boardWriter" , vo); 

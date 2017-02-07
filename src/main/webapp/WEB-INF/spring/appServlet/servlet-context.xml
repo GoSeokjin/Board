@@ -10,22 +10,7 @@
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
-	<annotation-driven />
-
-	<!-- 스캔 -->
-	<context:component-scan base-package="com.board.controller" />
-	<context:component-scan base-package="com.board.dao" />
-	<context:component-scan base-package="com.board.service" />
-	<context:component-scan base-package="com.board.vo" />
-	<context:component-scan base-package="com.main.homeController" />
-	
-	<!-- member -->
-	<context:component-scan base-package="com.member.controller" />
-	<context:component-scan base-package="com.member.dao" />
-	<context:component-scan base-package="com.member.service" />
-	<context:component-scan base-package="com.member.vo" />
-		
-	
+	<annotation-driven />	
 	
 	
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
@@ -51,6 +36,15 @@
 		<beans:property name="order" value="2" />
 	</beans:bean>
 	
+	<context:component-scan base-package="com.member.vo" />
+	<context:component-scan base-package="com.member.controller" />
+	<context:component-scan base-package="com.member.service" />
+	<context:component-scan base-package="com.member.dao" />
+	
+	<context:component-scan base-package="com.board.controller" />
+	<context:component-scan base-package="com.board.dao" />
+	<context:component-scan base-package="com.board.service" />
+	<context:component-scan base-package="com.main.homeController" />
 	
 	
 </beans:beans>

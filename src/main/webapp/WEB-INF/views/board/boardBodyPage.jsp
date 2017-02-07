@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-
+	
 </script>
 </head>
 <body>
@@ -29,29 +29,32 @@
 							<th>수정/삭제</th>
 						</thead>
 						<tbody>
-						<c:forEach items="${list}" var="boardVO">
-							<tr>
-								<td></td>
-								<td>${boardVO.bno}</td>
-								<td>${boardVO.writer}</td>
-								<td>${boardVO.title}</td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${boardVO.regdate}"/></td>
-								<td>${boardVO.viewcnt}</td>
-								<td><p data-placement="top" data-toggle="tooltip" title="Edit">
-										<a href="/board/boardUpdate?bno=${boardVO.bno}">
-											<button class="btn btn-primary btn-xs">
-												<span class="glyphicon glyphicon-pencil"></span>
-											</button>
-										</a>
-									</p></td>
-								<td><p data-placement="top" data-toggle="tooltip" title="Delete">
-										<a href="/board/boardDelete?bno=${boardVO.bno}">
-										<button class="btn btn-danger btn-xs">
-											<span class="glyphicon glyphicon-trash"></span>
-										</button>
-										</a>
-									</p></td>
-							</tr>
+							<c:forEach items="${list}" var="boardVO">
+								<tr>
+									<td></td>
+									<td>${boardVO.bno}</td>
+									<td>${boardVO.bwriter}</td>
+									<td>${boardVO.btitle}</td>
+									<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+											value="${boardVO.bregdate}" /></td>
+									<td>${boardVO.bviewcnt}</td>
+									<td><p data-placement="top" data-toggle="tooltip"
+											title="Edit">
+											<a href="/board/boardUpdate?bno=${boardVO.bno}">
+												<button class="btn btn-primary btn-xs">
+													<span class="glyphicon glyphicon-pencil"></span>
+												</button>
+											</a>
+										</p></td>
+									<td><p data-placement="top" data-toggle="tooltip"
+											title="Delete">
+											<a href="/board/boardDelete?bno=${boardVO.bno}">
+												<button class="btn btn-danger btn-xs">
+													<span class="glyphicon glyphicon-trash"></span>
+												</button>
+											</a>
+										</p></td>
+								</tr>
 							</c:forEach>
 						</tbody>
 					</table>

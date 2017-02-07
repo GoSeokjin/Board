@@ -26,7 +26,6 @@ public class BoardController {
 	//硫붿씤�솕硫� ( 由ъ뒪�듃 �럹�씠吏� )
 	@RequestMapping(value= "/boardMain" , method=RequestMethod.GET)
 	public String boardMain(Model model)throws Exception{
-	
 		model.addAttribute("list" , service.boardList());
 		return "boardMain";
 	}
@@ -34,7 +33,7 @@ public class BoardController {
 	//湲��벐湲� �럹�씠吏�
 	@RequestMapping(value = "/boardWriter" , method = RequestMethod.GET)
 	public String boardWriter()throws Exception{
-		logger.info("Writer�샇異�");
+		logger.info("Writer");
 		return "boardWriter";
 	}
 	

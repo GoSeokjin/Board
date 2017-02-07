@@ -10,6 +10,9 @@ public class MemberVO {
 	private Date regdate;
 	private Date logindate;
 	
+	public MemberVO() {
+	
+	}
 	public MemberVO(int mno, String mid, String mpassword, String mname, Date regdate, Date logindate) {
 		super();
 		this.mno = mno;
@@ -66,6 +69,12 @@ public class MemberVO {
 
 	public void setLogindate(Date logindate) {
 		this.logindate = logindate;
+	}
+
+	@Override
+	public String toString() {
+		return "MemberVO [mno=" + mno + ", mid=" + mid + ", mpassword=" + mpassword + ", mname=" + mname + ", regdate="
+				+ regdate + ", logindate=" + logindate + "]";
 	}
 	
 	

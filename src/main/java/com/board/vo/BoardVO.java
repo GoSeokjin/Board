@@ -4,55 +4,64 @@ import java.sql.Date;
 
 public class BoardVO {
 	private Integer bno;
-	private String title;
-	private String content;
-	private String writer;
-	private Date regdate;
-	private int viewcnt;
-	
+	private String btitle;
+	private String bcontent;
+	private String bwriter;
+	private Date bregdate;
+	private int bviewcnt;
+
 	public Integer getBno() {
 		return bno;
 	}
+
 	public void setBno(Integer bno) {
 		this.bno = bno;
 	}
-	public String getTitle() {
-		return title;
+
+	public String getBtitle() {
+		return btitle;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+
+	public void setBtitle(String btitle) {
+		this.btitle = btitle;
 	}
-	public String getContent() {
-		return content;
+
+	public String getBcontent() {
+		return bcontent;
 	}
-	public void setContent(String content) {
-		this.content = content;
+
+	public void setBcontent(String bcontent) {
+		this.bcontent = bcontent;
 	}
-	public String getWriter() {
-		return writer;
+
+	public String getBwriter() {
+		return bwriter;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+
+	public void setBwriter(String bwriter) {
+		this.bwriter = bwriter;
 	}
-	public Date getRegdate() {
-		return regdate;
+
+	public Date getBregdate() {
+		return bregdate;
 	}
-	public void setRegdate(Date regdate) {
-		this.regdate = regdate;
+
+	public void setBregdate(Date bregdate) {
+		this.bregdate = bregdate;
 	}
-	public int getViewcnt() {
-		return viewcnt;
+
+	public int getBviewcnt() {
+		return bviewcnt;
 	}
-	public void setViewcnt(int viewcnt) {
-		this.viewcnt = viewcnt;
+
+	public void setBviewcnt(int bviewcnt) {
+		this.bviewcnt = bviewcnt;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer + ", regdate="
-				+ regdate + ", viewcnt=" + viewcnt + "]";
+		return "BoardVO [bno=" + bno + ", btitle=" + btitle + ", bcontent=" + bcontent + ", bwriter=" + bwriter
+				+ ", bregdate=" + bregdate + ", bviewcnt=" + bviewcnt + "]";
 	}
-	
-	
-	
+
 }
