@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.board.service.BoardServiceImpl;
 import com.board.vo.BoardVO;
+import com.board.vo.Criteria;
+import com.board.vo.PageMaker;
 
 @Controller
 @RequestMapping("/board/*")
@@ -23,12 +25,12 @@ public class BoardController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
-	//硫붿씤�솕硫� ( 由ъ뒪�듃 �럹�씠吏� )
+/*	//硫붿씤�솕硫� ( 由ъ뒪�듃 �럹�씠吏� )
 	@RequestMapping(value= "/boardMain" , method=RequestMethod.GET)
 	public String boardMain(Model model)throws Exception{
 		model.addAttribute("list" , service.boardList());
 		return "boardMain";
-	}
+	}*/
 	
 	//湲��벐湲� �럹�씠吏�
 	@RequestMapping(value = "/boardWriter" , method = RequestMethod.GET)
@@ -63,6 +65,18 @@ public class BoardController {
 		logger.info("delete");
 		service.boardDelete(bno);
 		return "redirect:/board/boardMain";
+	}
+	
+	@RequestMapping(value="/boardMain" , method = RequestMethod.GET)
+	public String listAll(Criteria cri , Model model)throws Exception{
+		logger.info("show list page with Criteria............");
+		model.addAttribute("list" , service.listCriteria(cri));
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.listCountCriteria(cri));
+		logger.info(pageMaker.toString());
+		model.addAttribute("pageMaker" , pageMaker);
+		return "boardMain";
 	}
 	
 	

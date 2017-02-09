@@ -29,9 +29,23 @@
 		]]>
 	</select>
 
+	<select id="listPage" resultType="BoardVO">
+	<![CDATA[
+		  select * from tbl_board where bno>0 order by bno desc limit #{pageStart},10
+		]]>
+	</select>
 
+	<select id="listCriteria" resultType="BoardVO">
+	<![CDATA[
+		  select * from tbl_board where bno>0 order by bno desc ,bregdate desc limit #{pageStart},#{perPageNum}
+		]]>
+	</select>
 
-
+	<select id="countPaging" resultType="int">
+	<![CDATA[
+		   select count(bno) from tbl_board where bno>0
+		]]>
+	</select>
 
 
 

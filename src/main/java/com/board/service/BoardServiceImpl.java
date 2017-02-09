@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.board.dao.BoardDaoImpl;
 import com.board.vo.BoardVO;
+import com.board.vo.Criteria;
 
 
 //�꽌鍮꾩뒪�엫�쓣 紐낆떆
@@ -41,6 +42,21 @@ public class BoardServiceImpl implements BoardServiceIn {
 	@Override
 	public List<BoardVO> boardList() throws Exception {
 		return dao.boardList();
+	}
+
+	@Override
+	public List<BoardVO> listPage(int page) throws Exception {
+		return dao.listPage(page);
+	}
+
+	@Override
+	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
+		return dao.listCriteria(cri);
+	}
+
+	@Override
+	public int listCountCriteria(Criteria cri) throws Exception {
+		return dao.countPagin(cri);
 	}
 
 }
