@@ -15,6 +15,7 @@ import com.board.service.BoardServiceImpl;
 import com.board.vo.BoardVO;
 import com.board.vo.Criteria;
 import com.board.vo.PageMaker;
+import com.board.vo.SearchCriteria;
 
 @Controller
 @RequestMapping("/board/*")
@@ -37,6 +38,12 @@ public class BoardController {
 	public String boardWriter()throws Exception{
 		logger.info("Writer");
 		return "boardWriter";
+	}
+	@RequestMapping(value = "/boardRead" ,  method = RequestMethod.GET)
+	public String boardRead(@RequestParam("bno")int bno , Model model)throws Exception{
+		BoardVO vo = service.boardRead(bno);
+		model.addAttribute("vo" , vo);
+		return "boardRead";
 	}
 	
 	@RequestMapping(value = "/boardWriter" , method = RequestMethod.POST)
@@ -68,7 +75,7 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/boardMain" , method = RequestMethod.GET)
-	public String listAll(Criteria cri , Model model)throws Exception{
+	public String listAll(SearchCriteria cri , Model model)throws Exception{
 		logger.info("show list page with Criteria............");
 		model.addAttribute("list" , service.listCriteria(cri));
 		PageMaker pageMaker = new PageMaker();

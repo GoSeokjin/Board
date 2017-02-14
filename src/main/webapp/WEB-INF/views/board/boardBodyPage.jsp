@@ -30,7 +30,7 @@
 								<tr>
 									<td></td>
 									<td>${boardVO.bno}</td>
-									<td>${boardVO.bwriter}</td>
+									<td><a href="/board/boardRead?bno=${boardVO.bno}">${boardVO.bwriter}</a></td>
 									<td>${boardVO.btitle}</td>
 									<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 											value="${boardVO.bregdate}" /></td>
@@ -78,9 +78,21 @@
 							</li>
 						</c:if>
 					</ul>
-
+		<%-- 			<div class="box-body">
+					<select name = "searchType">
+					<option value="n" <c:out value="${pageMaker.serachType == null?'selected':''}"}"/>>---</option>
+					<option value="t" <c:out value="${pageMaker.serachType eq 't'?'selected':''}"}"/>>Title</option>
+					<option value="c" <c:out value="${pageMaker.serachType eq 'c'?'selected':''}"}"/>>Content</option>
+					<option value="w" <c:out value="${pageMaker.serachType eq 'w'?'selected':''}"}"/>>Writer</option>
+					<option value="tc" <c:out value="${pageMaker.serachType eq 'tc'?'selected':''}"}"/>>Title or Content</option>
+					<option value="cw" <c:out value="${pageMaker.serachType eq 'cw'?'selected':''}"}"/>>Content or Writer</option>
+					<option value="tcw" <c:out value="${pageMaker.serachType eq 'tcw'?'selected':''}"}"/>>ALL</option>
+					</select>
+					<input type="text" name="keyword" id="keywordInput" value='${pageMaker.keyword}'>
+					<button id='searchBtn'>Search</button>
+					<button id='newBtn'>New Board</button>
+					</div> --%>
 				</div>
-
 			</div>
 		</div>
 	</div>

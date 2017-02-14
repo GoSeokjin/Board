@@ -24,6 +24,10 @@
 <definition name="boardWriter" extends="boardMain"> 
 <put-attribute name="boardBody" value="/WEB-INF/views/board/boardWriterPage.jsp" /> 
 </definition> 
+<!-- board Read -->
+<definition name="boardRead" extends="boardMain"> 
+<put-attribute name="boardBody" value="/WEB-INF/views/board/boardReadPage.jsp" /> 
+</definition> 
 
 <!-- board Notice -->
 <definition name="boardNotice" extends="boardMain"> 

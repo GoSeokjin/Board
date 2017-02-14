@@ -1,8 +1,10 @@
 package com.member.controller;
 
+import java.io.PrintWriter;
 import java.util.HashMap;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
@@ -30,12 +32,11 @@ public class MemberController {
 	
 	@RequestMapping(value = "/insertMember" ,method = RequestMethod.POST)
 	public void insertMember(MemberVO vo , Model model)throws Exception{
-		System.out.println("들어오나요 ?");
 		service.insertMember(vo);
 	}
 	
 	@RequestMapping(value = "/memberLogin",method = RequestMethod.POST)
-	public String memberLogin(HttpSession sesison , @RequestParam("mid")String mid,  @RequestParam("mpassword")String mpassword, Model model)throws Exception{
+	public String memberLogin(HttpSession sesison ,HttpServletResponse response, @RequestParam("mid")String mid,  @RequestParam("mpassword")String mpassword, Model model)throws Exception{
 		HashMap<String, String> loginMember = new HashMap<String, String>();
 		loginMember.put("mid", mid);
 		loginMember.put("mpassword", mpassword);
@@ -43,6 +44,9 @@ public class MemberController {
 		MemberVO m = service.loginMember(loginMember);
 		if(m != null){
 			sesison.setAttribute("member", m);
+		}else{
+			PrintWriter writer= response.getWriter();
+			writer.println("<script>alert('please check your id , pw'); location.href='/';</script>");
 		}
 		logger.info(m.toString());
 		return "redirect:/board/boardMain";
